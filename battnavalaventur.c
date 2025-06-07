@@ -45,7 +45,7 @@ tabuleiro[i][colunacruz] = 5;
 }
 
 //octaedro
-alcance = 
+ 
 
 //imprimir o nome do jogo
 printf("BATALHA NAVAL\n");//pula para outra linha
