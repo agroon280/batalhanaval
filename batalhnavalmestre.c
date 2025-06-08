@@ -17,6 +17,43 @@ for(int i = 0; i < 1; i++){
     for (int j = 0; j < 3; j++){
 tabuleiro[i+3][j]=3;}}
 
+//habilidades especiais piramide
+int inicio = 6;//diz qual linha
+int coluna = 5;//diz ao codigo aonde comecar na linha
+
+for (int i = 0; i < 3; i++) {
+
+int linha = inicio + i;
+if (linha >= 10) break;//nao sair da matriz
+
+for (int j = coluna - i; j <= coluna + i; j++) {
+//diz qual e a linha scaneada
+if (j >= 0 && j < 10) {
+tabuleiro[linha][j] = 5; // marca dano
+}}
+}
+
+//cruz
+int tamanho= 3;
+int colunacruz = tamanho / 2;
+
+for(int i= 0; i < tamanho; i++){
+for(int j = 0; j < tamanho; j++){
+if(i == colunacruz || j == colunacruz){
+tabuleiro[i][j] = 5;
+}else{tabuleiro[i][j] = 0;} } }
+
+//octaedro
+int centrolinha = 3;
+int centrocoluna = 5;
+for(int i = centrolinha - 1; i <= centrolinha + 1; i++){
+tabuleiro[i][centrocoluna] = 5;
+}
+
+for(int j = centrocoluna - 1; j <= centrocoluna + 1; j++){
+if(j >= 0 && j <= 10)tabuleiro[centrolinha][j] = 5;}
+
+
 //imprimir o nome do jogo
 printf("BATALHA NAVAL\n");//pula para outra linha
 printf("   ");//da um espacamento antes de imprimir as letras na mesma linha
