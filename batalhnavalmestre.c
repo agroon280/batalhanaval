@@ -35,7 +35,7 @@ tabuleiro[linha][j] = 5; // marca dano
 
 //cruz
 int tamanho= 3;
-int colunacruz = tamanho / 2;
+int colunacruz = tamanho / 2;//faz a 
 
 for(int i= 0; i < tamanho; i++){
 for(int j = 0; j < tamanho; j++){
@@ -44,8 +44,8 @@ tabuleiro[i][j] = 5;
 }else{tabuleiro[i][j] = 0;} } }
 
 //octaedro
-int centrolinha = 3;
-int centrocoluna = 5;
+int centrolinha = 3;//definindo inicio
+int centrocoluna = 5;//definindo aonde inicia na linha
 for(int i = centrolinha - 1; i <= centrolinha + 1; i++){
 tabuleiro[i][centrocoluna] = 5;
 }
