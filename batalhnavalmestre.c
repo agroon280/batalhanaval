@@ -34,24 +34,30 @@ tabuleiro[linha][j] = 5; // marca dano
 }
 
 //cruz
-int tamanho= 3;
-int colunacruz = tamanho / 2;//faz a 
+int tamanho= 4;
+int centlinha = 4;
+int centcoluna = 4;
+int raio = tamanho / 2;
 
-for(int i= 0; i < tamanho; i++){
-for(int j = 0; j < tamanho; j++){
-if(i == colunacruz || j == colunacruz){
-tabuleiro[i][j] = 5;
-}else{tabuleiro[i][j] = 0;} } }
+for(int i= -raio; i <= raio; i++){
+int linha = centlinha + i;
+    if(linha >= 0 && linha <= 10) tabuleiro[linha][centcoluna] = 5;
+}
 
+for(int j = -raio; j <= raio; j++ ){
+int coluna = centcoluna + j;
+if(coluna >= 0 && coluna <= 10) tabuleiro[centlinha][coluna] = 5;
+}
 //octaedro
 int centrolinha = 3;//definindo inicio
-int centrocoluna = 5;//definindo aonde inicia na linha
+int centrocoluna = 8;//definindo aonde inicia na linha
+
 for(int i = centrolinha - 1; i <= centrolinha + 1; i++){
 tabuleiro[i][centrocoluna] = 5;
 }
 
 for(int j = centrocoluna - 1; j <= centrocoluna + 1; j++){
-if(j >= 0 && j <= 10)tabuleiro[centrolinha][j] = 5;}
+tabuleiro[centrolinha][j] = 5;}
 
 
 //imprimir o nome do jogo
